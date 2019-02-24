@@ -1,0 +1,45 @@
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!--	                                                                                                                            -->
+<!--	The item page is shown for an authenticated user who visits the site. Flashed messages, if any, are                         --><!--    shown. Then the information of the selected item is also shown, together with the possibility to edit or                    --><!--    delete the item, if it has been created by the user itself.                                                                 -->
+<!--	                                                                                                                            -->
+<!------------------------------------------------------------------------------------------------------------------------------------>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row hero-image">
+		<div class="col-md-1"></div>
+		<div class="col-md-11">
+			<h1>Catalog App</h1>
+		</div>
+	</div>
+
+	<div class = 'flash'>
+		{% with messages = get_flashed_messages() %}
+      		{% if messages %}
+        		<ul>
+        			{% for message in messages %}
+            			<li> {{ message }} </li>
+        			{% endfor %}
+        		</ul>
+        	{% endif %}
+    	{% endwith %}
+	</div>
+
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<div>
+				<h3>{{item.title}}</h3>
+				<p>{{item.description}}</p>
+				<a href="{{url_for('editItem', title = item.title)}}">
+					 <span class="glyphicon glyphicon-edit"></span>Edit
+				</a>
+				<span></span> |
+				<a href="{{url_for('deleteItem', title = item.title)}}">
+					<span class="glyphicon glyphicon-trash"></span>Delete
+				</a>
+			</div>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+{% endblock %}

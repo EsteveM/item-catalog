@@ -1,0 +1,44 @@
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!--	                                                                                                                            -->
+<!--	Welcome page once the user has been successfully authenticated. From this page, the user will be redirected to the homepage -->
+<!--	                                                                                                                            -->
+<!------------------------------------------------------------------------------------------------------------------------------------>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row hero-image">
+		<div class="col-md-1"></div>
+		<div class="col-md-11">
+			<h1>Catalog App</h1>
+		</div>
+	</div>
+
+	<div class="row padding-top">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<h2> Login successful! </h2>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<h3> Welcome {{login_session['username']}}! </h2>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<img class="welcome-picture" src="{{login_session['picture']}}" alt="User's picture">
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<h2> Redirecting to home page...</h2>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!--	                                                                                                                            -->
+<!--	The deleteItem page is shown for an authenticated user who visits the site. Flashed messages, if any, are                   --><!--    shown. Then the user confirms, if so, that they indeed want to delete the item.                                             -->
+<!--	                                                                                                                            -->
+<!------------------------------------------------------------------------------------------------------------------------------------>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row hero-image">
+		<div class="col-md-1"></div>
+		<div class="col-md-11 padding-none">
+			<h1>Catalog App</h1>
+		</div>
+	</div>
+
+	<div class = 'flash'>
+		{% with messages = get_flashed_messages() %}
+      		{% if messages %}
+        		<ul>
+        			{% for message in messages %}
+            			<li> {{ message }} </li>
+        			{% endfor %}
+        		</ul>
+        	{% endif %}
+    	{% endwith %}
+
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<h2>Delete Item</h2><br>
+			<p>Are you sure you want to delete the {{item.title}} item of the {{item.category.name}} category?</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<button type="submit" class="btn btn-default" id="submit">
+				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}
+

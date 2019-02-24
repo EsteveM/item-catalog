@@ -1,0 +1,138 @@
+/**************************************************************************************************************************/
+/*                                                                                                                        */
+/*            General styles for main html tags                                                                           */
+/*                                                                                                                        */
+/**************************************************************************************************************************/
+
+* {
+	font-family: "Helvetica Neue Bold", Roboto, Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+h1 {
+	font-family: "Helvetica Neue Light", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 50px;
+	color: white;
+	line-height: 60px;
+	font-weight: 300;
+	margin: 45px 0;
+}
+
+h2 {
+	font-size: 24px;
+	color: lightseagreen;
+	line-height: 29px;
+}
+
+h3 {
+	font-size: 18px;
+	color: orange;
+	line-height: 23px;
+}
+
+p {
+ 	font-family: "Helvetica Neue", Roboto, Helvetica, Arial, sans-serif;
+ 	font-size: 16px;
+ 	color: dimgray;
+ 	line-height: 24px;
+ 	font-weight: 400;
+}
+
+a {
+	font-family: "Helvetica Neue", Roboto, Helvetica, Arial, sans-serif;
+ 	font-size: 18px;
+ 	color: orange;
+ 	line-height: 23px;
+}
+
+a:hover {
+	text-decoration: none;
+	background-color: palegreen;
+}
+
+label {
+	font-size: 18px;
+	line-height: 23px;
+}
+
+img {
+	border-radius: 50%;
+}
+
+/******************************************************************************************************************************/
+/*                                                                                                                            */
+/*            Style for the links and user name at the header of all site pages. The last one after successful authentication */
+/*            Style for the user picture at the header of all site pages once successfully authenticated                      */
+/*            Style for the welcome picture at the welcome page shown after successful authentication                         */
+/*                                                                                                                            */
+/******************************************************************************************************************************/
+
+.header-elements a {
+	font-size: 16px;
+ 	color: dimgray;
+ 	line-height: 17px;
+}
+
+.username {
+	font-size: 14px;
+ 	color: dimgray;
+ 	line-height: 17px;
+ 	font-style: italic;
+}
+
+.user-picture {
+	width: 40px;
+	height: 40px;
+}
+
+.welcome-picture {
+	width: 200px;
+	height: 200px;
+}
+
+/**************************************************************************************************************************/
+/*                                                                                                                        */
+/*            Style for top and bottom padding throughout the applicaction                                                */
+/*            Additional style over the bootstrap buttons                                                                 */
+/*            Additional style over the bootstrap glyphicons                                                              */
+/*                                                                                                                        */
+/**************************************************************************************************************************/
+
+.padding-top {
+	padding-top: 30px;
+}
+
+.padding-bottom {
+	padding-bottom: 30px;
+}
+
+.btn {
+	padding: 10px;
+	border-width: 2px;
+	border-color: forestgreen;
+	color: forestgreen;
+}
+
+.glyphicon {
+	margin-right: 10px;
+}
+
+/**************************************************************************************************************************/
+/*                                                                                                                        */
+/*            Style for the hero image                                                                                    */
+/*            Style for the flashed messages                                                                              */
+/*                                                                                                                        */
+/**************************************************************************************************************************/
+
+.hero-image {
+	height: 140px;
+	background: url("/static/action-adults-adventure-248547.jpg") center/cover no-repeat;
+}
+
+.flash li {
+	list-style-type: none;
+	text-align: center;
+	background-color: palegreen;
+	color: black;
+	font-size: 16px;
+}

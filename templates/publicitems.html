@@ -1,0 +1,62 @@
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!--	                                                                                                                            -->
+<!--	The  publicitems page is shown as the homepage for a non-authenticated user who visits the site. Flashed messages, if       --> <!--    any, are shown. Then all categories and the latest added items to the selected category are also displayed.                 -->
+<!--	                                                                                                                            -->
+<!------------------------------------------------------------------------------------------------------------------------------------>
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row hero-image">
+		<div class="col-md-1"></div>
+		<div class="col-md-11">
+			<h1>Catalog App</h1>
+		</div>
+	</div>
+
+	<div class = 'flash'>
+		{% with messages = get_flashed_messages() %}
+      		{% if messages %}
+        		<ul>
+        			{% for message in messages %}
+            			<li> {{ message }} </li>
+        			{% endfor %}
+        		</ul>
+        	{% endif %}
+    	{% endwith %}
+
+	</div>
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-1"></div>
+		<div class="col-md-4">
+			<h2> Categories </h2>
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-1"></div>
+		<div class="col-md-4">
+			{% if itemsLength == 1 %}
+				<h2> {{category.name}} Items (1 item)</h2>
+			{% else %}
+				<h2> {{category.name}} Items ({{itemsLength}} items)</h2>
+			{% endif %}
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<div class="col-md-1"></div>
+	<div class="col-md-4">
+		{% for category in categories %}
+			<a href = "{{url_for('showItems', name = category.name)}}">
+				<h3></h3>{{category.name}}
+			</a>
+		{% endfor %}
+	</div>
+	<div class="col-md-1"></div>
+	<div class="col-md-1"></div>
+	<div class="col-md-4">
+		{% for item in items %}
+			<a href = "{{url_for('showItem', name = item.category.name, title = item.title)}}">
+				<h3></h3>{{item.title}} ({{item.category.name}})
+			</a>
+		{% endfor %}
+	</div>
+	<div class="col-md-1"></div>
+{% endblock %}

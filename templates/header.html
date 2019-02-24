@@ -1,0 +1,32 @@
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!--                                                                                                                                -->
+<!--  The header template will be included into all other templates to display the top menu row. This will make it possible for the --> <!--  user to return to the homepage from any other page on the site. It will also allow the user to log in/out of the application. --> <!--  Finally, once the user is logged in, its username and picture will be displayed just under the top menu.                      -->
+<!--                                                                                                                                -->
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<div class="row header-elements padding-top">
+	<div class="col-md-6">
+		<a href="{{url_for('showCategories')}}">
+			<span class="glyphicon glyphicon-home"></span>Show All Categories and Latest Items
+		</a>
+	</div>
+	<div class="col-md-6 text-right">
+		{%if 'username' not in session %}
+			<a href="{{url_for('showLogin')}}">
+				<span class="glyphicon glyphicon-log-in"></span>Click Here to Login
+			</a>
+		{% else %}
+			<a href="{{url_for('gdisconnect')}}">
+				<span class="glyphicon glyphicon-log-out"></span>Click Here to Logout
+			</a>
+		{% endif %}
+	</div>
+</div>
+<div class="row padding-bottom">
+	{%if 'username' in session %}
+		<div class="col-md-6"></div>
+		<div class="col-md-6 text-right">
+			<span class="username">{{session['username']}}</span>
+			<img class="user-picture" src="{{session['picture']}}" alt="User's picture">
+		</div>
+	{% endif %}
+</div>
